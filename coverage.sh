@@ -16,7 +16,8 @@ if [ -z "$INPUT" ]; then
 	go test ./... -coverpkg "$(go list || go list -m | head -1)/..." -coverprofile "$INPUT"
 fi
 
-echo "input: $INPUT"
+# Only difference from ncruces version: use the .go version instead of .goal
+sed -i 's/\.goal/\.go/' "$INPUT"
 
 # Create an HTML report.
 if [[ "${INPUT_REPORT-true}" == "true" ]]; then
