@@ -1,4 +1,6 @@
-# Go coverage report
+# Goal coverage report
+
+This is a version of https://github.com/ncruces/go-coverage-report that replaces `.goal` -> `.go` for repositories that use the [Goal](https://cogentcore.org/lab/goal) augmented version of the Go language.
 
 A GitHub Action to add a coverage [report][1], [badge][2], and [chart][4] to your Go repo.
 
@@ -6,7 +8,7 @@ Apply it to your repo by adding this step to one of your workflows:
 
 ```yaml
 - name: Update coverage report
-  uses: ncruces/go-coverage-report@v0
+  uses: cogentcore/goal-coverage-report@v0
 ```
 
 Your repo needs to have a Wiki for the action to work,
@@ -49,7 +51,7 @@ Complete example:
   run: go test -v ./...
 
 - name: Update coverage report
-  uses: ncruces/go-coverage-report@v0
+  uses: cogentcore/go-coverage-report@v0
   with:
     report: true
     chart: true
